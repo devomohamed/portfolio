@@ -1,0 +1,95 @@
+/* global rules  */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul li{
+  list-style-type: none;
+}
+header{
+      width: 230px;
+      height: 100vh;
+      right: -230px;
+      z-index: 100;
+      top: 0;
+      position: absolute;
+      padding-left: 20px;
+      transition: .5s;
+      -webkit-box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+      box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+      background-color: #20202A;
+      &.active{
+        right: 0;
+        .overlay{
+          position: absolute;
+          content: "";
+          right: 0;
+          top: 0;
+          background-color: rgba($color: #1E1E28, $alpha: .3);
+          z-index: -1;
+          width: calc(100vw + 270px);
+          height: 100%;
+        }
+      }
+      .box-icon{
+        display: flex;
+        height: 70px;
+        align-items: center;
+        .icon{
+          &.active{
+            left: calc(0% + 20px);
+            span{
+              &:first-of-type{
+                margin-top: 6px;
+                transform: rotate(45deg);
+              }
+              &:nth-last-of-type(2){
+                opacity: 0;
+              }
+              &:last-of-type{
+                margin-top: 6px;
+                transform: rotate(-45deg);
+              }
+            }
+          }
+          left: -70px;
+          position: absolute;
+          width: 20px;
+          height: 14px;
+          cursor: pointer;
+          transition: .3s;
+          z-index: 3;
+          span{
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transition: all .3s;
+            &:nth-last-of-type(2){
+              margin-top: 6px;
+            }
+            &:last-of-type{
+              margin-top: 12px;
+            }
+          }
+        }
+      }
+      .links{
+        margin-top: 6pc;
+        li{
+          &.active{
+            color: white;
+          }
+         &:hover{
+            color: white;
+          }
+          padding: 10px 0;
+          color: #8c8c8e;
+          font-weight: bold;
+          transition: .3s;
+          cursor: pointer;
+        }
+      }
+}

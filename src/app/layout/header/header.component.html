@@ -1,0 +1,22 @@
+<header [ngClass]="{active: toggleMenuClass}" class="active">
+  <div class="container">
+    <div class="overlay" (click)="closeToggleMenu()"></div>
+    <div class="box-icon">
+      <div [ngClass]="{active: toggleMenuClass}" class="icon" (click)="toggleMenu()" id="icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="links">
+      <ul>
+        <li routerLink="/home" routerLinkActive="active">Home</li>
+        <li routerLink="/portfolio" routerLinkActive="active">PORTFOLIO</li>
+        <li routerLink="/history" routerLinkActive="active">History</li>
+        <li routerLink="/blog" routerLinkActive="active">BLOG</li>
+        <li routerLink="/contact" routerLinkActive="active">Contact</li>
+      </ul>
+    </div>
+    
+  </div>
+</header>
